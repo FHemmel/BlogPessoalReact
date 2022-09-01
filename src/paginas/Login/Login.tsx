@@ -9,9 +9,14 @@ import './Login.css';
 import { History } from '@material-ui/icons';
 
 function Login() {
+
+    //Redireciona o usuário para determinada página
     let history = useNavigate();
+
+    // Hooks que vão manipular o nosso Local Storage para gravar o Token
     const [token, setToken] = useLocalStorage('token');
 
+    //useState define como uma determinada variável será inicializada quando o comp for renderizar
     const [userLogin, setUserLogin] = useState<UserLogin>(
         {
             id: 0,
@@ -35,7 +40,7 @@ function Login() {
             if(token != ''){
                 history('/home')
             }
-        },[token])    
+        },[token])
 
         async function onSubmit(e: ChangeEvent<HTMLFormElement>){
 
