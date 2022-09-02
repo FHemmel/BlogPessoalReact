@@ -1,5 +1,6 @@
 .box1{
-    background-color: rgb(59, 55, 55);
+    background: rgb(107,105,105);
+    background: radial-gradient(circle, rgba(107,105,105,1) 0%, rgba(59,55,55,1) 100%);
     height: 100px;
     text-align: center !important;
 }
@@ -11,7 +12,8 @@
 }
 
 .box2{
-    background-color: rgb(107, 103, 103);
+    background: rgb(107,105,105);
+    background: radial-gradient(circle, rgba(107,105,105,1) 0%, rgba(59,55,55,1) 100%);
     height: 60px;
 }
 

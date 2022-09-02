@@ -14,3 +14,8 @@
 .text-decorator-none{
     text-decoration: none;
 }
+
+.bg-login{
+    background-color: rgb(221, 215, 215) !important;
+ 
+}
