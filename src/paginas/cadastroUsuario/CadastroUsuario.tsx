@@ -51,9 +51,11 @@ function CadastroUsuario() {
     }
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
-        if(confirmarSenha == user.senha && user.senha.length > 7){
-        cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult)
-        alert('Usuario cadastrado com sucesso')
+        if (user.senha.length < 8){
+            alert('A senha tem que contér no mínimo 8 caracteres!')
+        }else if(confirmarSenha == user.senha){
+            cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult)
+            alert('Usuario cadastrado com sucesso')
         }else{
             alert('Dados inconsistentes. Favor verificar as informações de cadastro.')
         }
