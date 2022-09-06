@@ -6,12 +6,11 @@ import useLocalStorage from 'react-use-localstorage';
 import { login } from '../../services/Service';
 import UserLogin from '../../models/UserLogin';
 import './Login.css';
-import { History } from '@material-ui/icons';
 
 function Login() {
 
     //Redireciona o usuário para determinada página
-    let history = useNavigate();
+    let navigate = useNavigate();
 
     // Hooks que vão manipular o nosso Local Storage para gravar o Token
     const [token, setToken] = useLocalStorage('token');
@@ -38,7 +37,7 @@ function Login() {
 
         useEffect(()=>{
             if(token != ''){
-                history('/home')
+                navigate('/home')
             }
         },[token])
 
