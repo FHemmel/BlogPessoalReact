@@ -1,3 +1,24 @@
+.login-esquerda{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+
+.card-login{
+    width: 35vw;
+    height: 70vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    border-radius: 30px;
+    background: radial-gradient(circle, rgba(163,160,160,0) 0%, rgba(149,139,139,0.6222864145658263) 100%);
+}
+
 .textos1{
     font-weight: bold !important;
 }
