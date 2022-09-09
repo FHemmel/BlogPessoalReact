@@ -2,18 +2,23 @@ import React, { useState, useEffect, ChangeEvent } from 'react';
 import { Grid, TextField, Typography, Button } from '@material-ui/core';
 import { Box } from '@mui/material'
 import { Link, useNavigate } from 'react-router-dom';
-import useLocalStorage from 'react-use-localstorage';
 import { login } from '../../services/Service';
 import UserLogin from '../../models/UserLogin';
 import './Login.css';
+import { useDispatch } from 'react-redux';
+import { addToken } from '../../store/tokens/actions';
+
+
+
 
 function Login() {
 
     //Redireciona o usuário para determinada página
     let navigate = useNavigate();
+    const dispatch = useDispatch()
 
     // Hooks que vão manipular o nosso Local Storage para gravar o Token
-    const [token, setToken] = useLocalStorage('token');
+    const [token, setToken] = useState('');
 
     //useState define como uma determinada variável será inicializada quando o comp for renderizar
     const [userLogin, setUserLogin] = useState<UserLogin>(
@@ -37,6 +42,7 @@ function Login() {
 
     useEffect(() => {
         if (token != '') {
+            dispatch(addToken(token));
             navigate('/home')
         }
     }, [token])
