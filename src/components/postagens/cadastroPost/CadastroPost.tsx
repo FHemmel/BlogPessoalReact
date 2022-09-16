@@ -7,7 +7,7 @@ import { TokenState } from '../../../store/tokens/tokensReducer';
 import { useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 import Tema from '../../../models/Tema';
-import Postagem from '../../../models/Postagem';
+import Postagem from '../../../models/Postagem'
 
 function CadastroPost() {
 
